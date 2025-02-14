@@ -1,10 +1,11 @@
 import React from "react";
 import "../styles.css";
-
-type ContentType = "brand" | "vision" | "mijuNumberTwo" | "cocktails";
+import Brand from "../assets/miju-sprites.svg";
+import Vision from "../assets/miju-sprite-sunglasses.svg";
+import MijuNumberTwo from "../assets/miju-sprite-leaves.svg";
+import Cocktails from "../assets/miju-sprite-bartender.svg";
 
 interface HomePageImageProps {
-  src: string;
   contentType: ContentType;
   position: React.CSSProperties;
   onClick: (label: string) => void;
@@ -17,11 +18,19 @@ const labels: {[key: string]: string} = {
   cocktails: "Cocktails",
 }
 
+const sources = {
+  brand: Brand,
+  vision: Vision,
+  mijuNumberTwo: MijuNumberTwo,
+  cocktails: Cocktails,
+}
+
 const getRandomDelay = () => `${(Math.random() * 2).toFixed(2)}s`;
 
-const HomePageImage: React.FC<HomePageImageProps> = ({ src, contentType, position, onClick }) => {
+const HomePageImage: React.FC<HomePageImageProps> = ({ contentType, position, onClick }) => {
   const randomDelay = getRandomDelay();
   const label = labels[contentType]
+  const src = sources[contentType]
 
   return (
     <div className="svg-container" style={position}>
