@@ -98,11 +98,18 @@
   cursor: pointer;
   color: black;
   transition: transform 0.2s ease-in-out;
+  outline: none;
+}
+
+.modal-close:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .modal-close:hover {
   transform: scale(1.2);
 }
+
 
 /* ======================================================== */
 
