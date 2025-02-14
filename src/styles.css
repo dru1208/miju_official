@@ -40,8 +40,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the element */
-  z-index: 10; /* Ensure it stays above floating elements */
+  transform: translate(-50%, -50%);
+  z-index: 5; /* Ensure it's below the modal */
 }
 
 .logo-image {
@@ -62,6 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 20; /* Ensure modal is on top */
 }
 
 .modal-content {
