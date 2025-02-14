@@ -4,10 +4,10 @@ import HomePageModal from "./components/HomePageModal";
 import HomePageLogo from "./components/HomePageLogo";
 import "./styles.css";
 
-import BrandSvg from "./assets/miju-sprites.svg";
-import VisionSvg from "./assets/miju-sprite-sunglasses.svg";
-import MissionSvg from "./assets/miju-sprite-leaves.svg";
-import ValuesSvg from "./assets/miju-sprite-bartender.svg";
+import Brand from "./assets/miju-sprites.svg";
+import Vision from "./assets/miju-sprite-sunglasses.svg";
+import MijuNumberTwo from "./assets/miju-sprite-leaves.svg";
+import Cocktails from "./assets/miju-sprite-bartender.svg";
 import LogoSvg from "./assets/miju-logo.svg";
 
 const App: React.FC = () => {
@@ -27,26 +27,26 @@ const App: React.FC = () => {
     <div className="home-page">
       <HomePageLogo src={LogoSvg} />
       <HomePageImage
-        src={BrandSvg}
-        label="Brand"
+        src={Brand}
+        contentType="brand"
         position={{ top: "10%", left: "15%" }}
         onClick={handleOpenModal}
       />
       <HomePageImage
-        src={VisionSvg}
-        label="Vision"
+        src={Vision}
+        contentType="vision"
         position={{ top: "30%", right: "20%" }}
         onClick={handleOpenModal}
       />
       <HomePageImage
-        src={MissionSvg}
-        label="Mission"
+        src={MijuNumberTwo}
+        contentType="mijuNumberTwo"
         position={{ bottom: "20%", left: "35%" }}
         onClick={handleOpenModal}
       />
       <HomePageImage
-        src={ValuesSvg}
-        label="Cocktails"
+        src={Cocktails}
+        contentType="cocktails"
         position={{ bottom: "5%", right: "10%" }}
         onClick={handleOpenModal}
       />
