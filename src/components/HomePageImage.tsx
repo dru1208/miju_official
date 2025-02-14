@@ -8,11 +8,10 @@ interface HomePageImageProps {
   onClick: (label: string) => void;
 }
 
-// Generate a random float delay between 0s and 2s
 const getRandomDelay = () => `${(Math.random() * 2).toFixed(2)}s`;
 
 const HomePageImage: React.FC<HomePageImageProps> = ({ src, label, position, onClick }) => {
-  const randomDelay = getRandomDelay(); // Random delay per SVG
+  const randomDelay = getRandomDelay();
 
   return (
     <div className="svg-container" style={position}>
@@ -22,7 +21,7 @@ const HomePageImage: React.FC<HomePageImageProps> = ({ src, label, position, onC
         className="svg-image"
         style={{
           ...position,
-          "--float-delay": randomDelay, // Apply only delay
+          "--float-delay": randomDelay,
         } as React.CSSProperties}
         onClick={() => onClick(label)}
       />

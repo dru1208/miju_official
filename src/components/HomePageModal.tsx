@@ -7,7 +7,7 @@ interface ModalProps {
   content: string;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, content }) => {
+const HomePageModal: React.FC<ModalProps> = ({ isOpen, onClose, content }) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -37,11 +37,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, content }) => {
           {content === "Brand" && "We are a forward-thinking brand with innovation at our core."}
           {content === "Vision" && "Our vision is to revolutionize the industry with cutting-edge solutions."}
           {content === "Mission" && "We strive to deliver the best services and products to our customers."}
-          {content === "Values" && "Integrity, Excellence, and Customer Satisfaction drive our business."}
+          {content === "Cocktails" && "We craft the finest cocktails with passion and expertise."}
         </p>
       </div>
     </div>
   );
 };
 
-export default Modal;
+export default HomePageModal;
