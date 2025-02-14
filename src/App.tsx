@@ -28,7 +28,7 @@ const App: React.FC = () => {
       />
       <HomePageImage
         contentType="vision"
-        position={{ top: "30%", right: "20%" }}
+        position={{ top: "25%", right: "20%" }}
         onClick={handleOpenModal}
       />
       <HomePageImage
