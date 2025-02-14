@@ -4,12 +4,29 @@ import "../styles.css";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  content: string;
+  contentType: HomePageContentType;
 }
 
-const mijuNumberTwoContent = "Discover Miju No.2, a premium rice spirit inspired by centuries-old techniques from the history of Vietnam. Distilled with precision and care, Miju carries the delicate fragrance of rice and a subtle hint of coconut, offering a perfect base for crafting intriguing, dessert-inspired cocktails that are as indulgent as they are unforgettable. For a familiar favorite, try an espresso martini, 2oz Miju, ½ oz coffee liqueur, 1oz espresso, 1/2oz simple syrup and shake with ice until cold."
+const brandContent = "Miju Spirits is a small business created by two individuals passionate about the diverse world of liquor throughout Asian culture. In order to bring those flavours to Canada, our founders have brought back recipes to recreate different spirits locally. We're hoping to bring the distinct dimensions of asian liquors to Canada in celebrating their cultural roots."
+const visionContent = "Our mission is to celebrate and modernize the rich, diverse flavors and traditions of Asia through our unique spirits and liquors. We aim to introduce authentic Asian flavor profiles in an approachable and accessible way to a global audience, creating memorable experiences that honor cultural heritage while pushing the boundaries of modern taste."
+const mijuNumberTwoContent = "Discover Miju No.2, a premium rice spirit inspired by centuries-old techniques from the history of Vietnam. Distilled with precision and care, Miju carries the delicate fragrance of rice and a subtle hint of coconut, offering a perfect base for crafting intriguing, dessert-inspired cocktails that are as indulgent as they are unforgettable."
+const cocktailsContent = "Stay tuned for our upcoming collection of cocktails you can make with your next Miju bottle"
 
-const HomePageModal: React.FC<ModalProps> = ({ isOpen, onClose, content }) => {
+const contentNames = {
+  brand: "Brand",
+  vision: "Vision",
+  mijuNumberTwo: "Miju No. 2",
+  cocktails: "Cocktails",
+}
+
+const contents = {
+  brand: brandContent,
+  vision: visionContent,
+  mijuNumberTwo: mijuNumberTwoContent,
+  cocktails: cocktailsContent,
+}
+
+const HomePageModal: React.FC<ModalProps> = ({ isOpen, onClose, contentType }) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -28,19 +45,17 @@ const HomePageModal: React.FC<ModalProps> = ({ isOpen, onClose, content }) => {
 
   if (!isOpen) return null;
 
+  const name = contentNames[contentType]
+  const content = contents[contentType]
+
   return (
     <div className="modal-overlay" onClick={handleOverlayClick}>
       <div className="modal-content">
         <button className="modal-close" onClick={onClose}>
           ✖
         </button>
-        <h2>{content}</h2>
-        <p>
-          {content === "Brand" && "We are a forward-thinking brand with innovation at our core."}
-          {content === "Vision" && "Our vision is to revolutionize the industry with cutting-edge solutions."}
-          {content === "mijuNumberTwo" && mijuNumberTwoContent}
-          {content === "Cocktails" && "Stay tuned for our upcoming collection of cocktails you can make with your next Miju bottle"}
-        </p>
+        <h2>{name}</h2>
+        <p>{content}</p>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import Cocktails from "../assets/miju-sprite-bartender.svg";
 interface HomePageImageProps {
   contentType: HomePageContentType;
   position: React.CSSProperties;
-  onClick: (label: string) => void;
+  onClick: (contentType: HomePageContentType) => void;
 }
 
 const labels: {[key: string]: string} = {
@@ -42,7 +42,7 @@ const HomePageImage: React.FC<HomePageImageProps> = ({ contentType, position, on
           ...position,
           "--float-delay": randomDelay,
         } as React.CSSProperties}
-        onClick={() => onClick(label)}
+        onClick={() => onClick(contentType)}
       />
     </div>
   );

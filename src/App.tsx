@@ -7,10 +7,10 @@ import LogoSvg from "./assets/miju-logo.svg";
 
 const App: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState("");
+  const [modalContentType, setModalContentType] = useState<HomePageContentType>();
 
-  const handleOpenModal = (content: string) => {
-    setModalContent(content);
+  const handleOpenModal = (content: HomePageContentType) => {
+    setModalContentType(content);
     setModalOpen(true);
   };
 
@@ -41,7 +41,7 @@ const App: React.FC = () => {
         position={{ bottom: "5%", right: "10%" }}
         onClick={handleOpenModal}
       />
-      <HomePageModal isOpen={modalOpen} onClose={handleCloseModal} content={modalContent} />
+      {!!modalContentType && <HomePageModal isOpen={modalOpen} onClose={handleCloseModal} contentType={modalContentType} />}
     </div>
   );
 };
