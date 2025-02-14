@@ -37,7 +37,7 @@ const HomePageModal: React.FC<ModalProps> = ({ isOpen, onClose, content }) => {
           {content === "Brand" && "We are a forward-thinking brand with innovation at our core."}
           {content === "Vision" && "Our vision is to revolutionize the industry with cutting-edge solutions."}
           {content === "Mission" && "We strive to deliver the best services and products to our customers."}
-          {content === "Cocktails" && "We craft the finest cocktails with passion and expertise."}
+          {content === "Cocktails" && "Stay tuned for our upcoming collection of cocktails you can make with your next Miju bottle"}
         </p>
       </div>
     </div>
