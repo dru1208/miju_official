@@ -14,34 +14,20 @@
   100% { transform: translateY(0px); }
 }
 
-/* Default SVG Animations */
-.animated-svg {
-  animation: float 3s ease-in-out infinite;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Hover Effects */
-.svg-container:hover .animated-svg {
-  transform: scale(1.1);
-}
-
-/* .svg-container:hover .svg-image {
-  transform: scale(1.1);
-} */
-
+/* Default Floating Effect */
 .svg-image {
   animation: float 3s ease-in-out infinite;
-  transition: transform 0.3s ease-in-out;
-
-
   position: absolute;
   cursor: pointer;
   width: 120px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out; /* Ensures smooth scaling */
+  will-change: transform;
 }
 
+/* Apply Hover Effect on Top of Floating */
 .svg-image:hover {
-  transform: scale(1.1);
+  animation: float 3s ease-in-out infinite; /* Keeps floating */
+  transform: scale(1.15) translateY(-4px) !important; /* Force scaling to apply */
 }
 
 /* Modal Overlay */
