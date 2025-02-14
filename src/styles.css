@@ -1,0 +1,90 @@
+/* Layout */
+.home-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Default SVG Animations */
+.animated-svg {
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.svg-container:hover .animated-svg {
+  transform: scale(1.1);
+}
+
+/* .svg-container:hover .svg-image {
+  transform: scale(1.1);
+} */
+
+.svg-image {
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s ease-in-out;
+
+
+  position: absolute;
+  cursor: pointer;
+  width: 120px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.svg-image:hover {
+  transform: scale(1.1);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .svg-image {
+    width: 80px;
+  }
+  
+  .modal-content {
+    max-width: 90%;
+  }
+}
