@@ -1,1 +1,1 @@
-type ContentType = "brand" | "vision" | "mijuNumberTwo" | "cocktails";
+type HomePageContentType = "brand" | "vision" | "mijuNumberTwo" | "cocktails";

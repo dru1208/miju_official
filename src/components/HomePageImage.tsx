@@ -6,7 +6,7 @@ import MijuNumberTwo from "../assets/miju-sprite-leaves.svg";
 import Cocktails from "../assets/miju-sprite-bartender.svg";
 
 interface HomePageImageProps {
-  contentType: ContentType;
+  contentType: HomePageContentType;
   position: React.CSSProperties;
   onClick: (label: string) => void;
 }
