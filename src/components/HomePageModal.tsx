@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "../styles.css";
+import styled from "styled-components";
 
 interface ModalProps {
   isOpen: boolean;
@@ -25,6 +26,14 @@ const contents = {
   mijuNumberTwo: mijuNumberTwoContent,
   cocktails: cocktailsContent,
 }
+
+const Header = styled.h2`
+  text-align: center;
+`
+
+const Paragraph = styled.p`
+  text-align: start;
+`
 
 const HomePageModal: React.FC<ModalProps> = ({ isOpen, onClose, contentType }) => {
   useEffect(() => {
@@ -54,8 +63,8 @@ const HomePageModal: React.FC<ModalProps> = ({ isOpen, onClose, contentType }) =
         <button className="modal-close" onClick={onClose}>
           ✖
         </button>
-        <h2>{name}</h2>
-        <p>{content}</p>
+        <Header>{name}</Header>
+        <Paragraph>{content}</Paragraph>
       </div>
     </div>
   );
