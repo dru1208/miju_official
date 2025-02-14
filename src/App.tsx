@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import HomePageImage from "./components/HomePageImage";
 import HomePageModal from "./components/HomePageModal";
-import "./styles.css"; // Ensure styles are correctly imported
+import HomePageLogo from "./components/HomePageLogo";
+import "./styles.css";
+
 import BrandSvg from "./assets/miju-sprites.svg";
 import VisionSvg from "./assets/miju-sprite-sunglasses.svg";
 import MissionSvg from "./assets/miju-sprite-leaves.svg";
 import ValuesSvg from "./assets/miju-sprite-bartender.svg";
-
+import LogoSvg from "./assets/miju-logo.svg";
 
 const App: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -23,6 +25,7 @@ const App: React.FC = () => {
 
   return (
     <div className="home-page">
+      <HomePageLogo src={LogoSvg} />
       <HomePageImage
         src={BrandSvg}
         label="Brand"
@@ -47,8 +50,6 @@ const App: React.FC = () => {
         position={{ bottom: "5%", right: "10%" }}
         onClick={handleOpenModal}
       />
-
-      {/* Modal */}
       <HomePageModal isOpen={modalOpen} onClose={handleCloseModal} content={modalContent} />
     </div>
   );
