@@ -5,5 +5,5 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  base: '/miju_official/',
+  base: process.env.VITE_BASE_PATH || '/miju_official/',
 });
